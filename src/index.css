@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gris;
+}
+
+.card {
+  @apply grid grid-rows-2 rounded-2xl border-4 border-stone-800 py-4 bg-white;
+}
+
+.image {
+  @apply m-auto w-[6rem] lg:w-3/12 hover:scale-105 lg:hover:scale-110 cursor-pointer;
+}
+
+.info {
+  @apply h-full w-full grid mt-2 items-start border-t-4 border-stone-800;
+}
