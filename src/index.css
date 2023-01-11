@@ -17,3 +17,17 @@ body {
 .info {
   @apply h-full w-full grid mt-2 items-start border-t-4 border-stone-800;
 }
+
+.spinner {
+  animation: spin 3s 1 ease-in-out;
+  -webkit-animation: spin 3s 1 ease-in-out;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

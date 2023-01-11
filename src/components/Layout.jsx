@@ -20,6 +20,13 @@ const Layout = () => {
           to='/tienda'>
           Tienda
         </Link>
+        <Link
+          className={`p-3 w-1/12 font-bold text-lg ${
+            location.pathname === '/carrito' && 'bg-blue-700 text-white rounded'
+          }`}
+          to='/carrito'>
+          Carrito
+        </Link>
       </nav>
       <div className='container p-8 m-10'>
         <Outlet />
