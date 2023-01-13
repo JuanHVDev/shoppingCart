@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 body {
-  @apply bg-gris;
+  font-family: 'Roboto', sans-serif;
 }
 
 .card {
-  @apply grid grid-rows-2 rounded-2xl border-4 border-stone-800 py-4 bg-white;
+  @apply grid grid-rows-2 rounded-2xl border-4 border-stone-800 py-4 bg-white h-full  w-full;
 }
 
 .image {
