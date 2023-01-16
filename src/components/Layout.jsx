@@ -5,35 +5,41 @@ import { useSelector } from 'react-redux'
 const Layout = () => {
   const location = useLocation()
   const carrito = useSelector(state => state.carrito)
+  const productosTotal = carrito.reduce((a, b) => a + b.cantidad, 0)
   return (
     <>
-      <header className='fixed bg-gris w-full'>
-        <h1 className='text-4xl '>blok</h1>
-        <nav className=' right-4 flex justify-end align-middle place-content-center items-center'>
-          <Link
-            className={`p-3 font-bold text-lg ${
-              location.pathname === '/' && 'bg-blue-700 text-white rounded'
-            }`}
-            to='/'>
-            Inicio
-          </Link>
-          <Link
-            className={` p-2 font-bold ${
-              location.pathname === '/tienda' &&
-              'bg-blue-700 text-white rounded'
-            }`}
-            to='/tienda'>
-            <MdOutlineStore size={40} />
-          </Link>
-          <Link
-            className={`p-3 font-bold ${
-              location.pathname === '/carrito' &&
-              'bg-blue-700 text-white rounded'
-            }`}
-            to='/carrito'>
-            <MdOutlineLocalGroceryStore className='' size={40} />
-            {carrito.length}
-          </Link>
+      <header className=' text-gris w-full '>
+        <nav className='py-2 md:py-4'>
+          <div className='container px-4 mx-auto md:flex md:items-center'>
+            <div className='flex justify-between items-center'>
+              {/* Titulo */}
+              <Link to='/' className='font-bold text-5xl text-indigo-600'>
+                Shopper Cart
+              </Link>
+            </div>
+
+            <div
+              className='hidden md:flex flex-col md:flex-row md:ml-auto mt-3 md:mt-0'
+              id='navbar-collapse'>
+              {/* Aqui van los links */}
+              <Link
+                className='h-fit p-2 lg:px-4 md:mx-2 text-white rounded bg-indigo-600'
+                to='/'>
+                Home
+              </Link>
+              <Link
+                className='h-fit p-2 lg:px-4 md:mx-2 text-white rounded bg-indigo-600'
+                to='/tienda'>
+                <MdOutlineStore size={30} />
+              </Link>
+              <Link
+                className='h-fit p-2 lg:px-4 md:mx-2 text-sm text-white rounded bg-indigo-600'
+                to='/carrito'>
+                <MdOutlineLocalGroceryStore size={25} />
+                <span className='text-[1rem}'>{productosTotal}</span>
+              </Link>
+            </div>
+          </div>
         </nav>
       </header>
       <Outlet />

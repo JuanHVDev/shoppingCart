@@ -6,7 +6,7 @@ import Tienda from './pages/Tienda'
 
 function App() {
   return (
-    <div className='h-screen dark:bg-stone-900 text-center py-4'>
+    <div className='h-screen dark:bg-stone-900 text-center'>
       <Routes>
         <Route path='/' element={<Layout />}>
           <Route index element={<Home />} />
